@@ -81,8 +81,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Orchestrator AI" },
-      { name: "description", content: "A local workspace where an Orchestrator AI delegates builds to specialist agents." },
+      { title: "DEVFORGE AI" },
+      { name: "description", content: "A local workspace where DEVFORGE AI delegates builds to specialist agents." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

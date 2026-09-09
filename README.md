@@ -1,7 +1,7 @@
-# Orchestrator AI
+# DEVFORGE AI
 
 A local web workspace where you submit a software-development prompt to a central
-**Orchestrator AI**, which delegates the work to specialist agents: Planning,
+**DEVFORGE AI**, which delegates the work to specialist agents: Planning,
 Research, Coding, Implementation and Review.
 
 This repository contains the **frontend only**. There is no LLM call, no agent
@@ -12,7 +12,7 @@ mock so the interface can be demonstrated end to end.
 
 - Focused AI-chat workspace (collapsible sidebar + chat area), not a dashboard
 - Home screen with a large auto-growing prompt box (Enter to send, Shift+Enter for a newline)
-- Chat screen with user / Orchestrator messages, timestamps and auto-scroll
+- Chat screen with user / DEVFORGE AI messages, timestamps and auto-scroll
 - Agent pipeline with `pending` / `active` / `completed` / `failed` states and a progress bar
 - Folder management: create, rename, delete, move chats in and out
 - Chat history with search, rename, delete, move-to-folder and active highlighting
@@ -102,7 +102,7 @@ When `VITE_API_BASE_URL` is set, the services call the backend at:
 | GET    | `/chats/:id/agents`      | current agent workflow      |
 
 If the backend is unreachable the chat screen shows
-"Unable to connect to the Orchestrator backend." with a retry button.
+"Unable to connect to the DEVFORGE backend." with a retry button.
 
 ## LocalStorage behaviour
 
@@ -111,10 +111,10 @@ Everything is persisted through `utils/storage.ts` — components never touch
 
 | Key                            | Contents                          |
 | ------------------------------ | --------------------------------- |
-| `orchestrator.chats`           | chats, messages, agent workflows  |
-| `orchestrator.folders`         | folders                           |
-| `orchestrator.theme`           | `dark` or `light`                 |
-| `orchestrator.sidebar-collapsed` | sidebar collapsed flag          |
+| `devforge.chats`           | chats, messages, agent workflows  |
+| `devforge.folders`         | folders                           |
+| `devforge.theme`           | `dark` or `light`                 |
+| `devforge.sidebar-collapsed` | sidebar collapsed flag          |
 
 On first run the store is seeded with four demo conversations and two folders.
 Deleting a folder never deletes its chats — they return to **All Chats**.

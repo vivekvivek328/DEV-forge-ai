@@ -17,7 +17,7 @@ export async function getAgentStatus(chatId: string): Promise<AgentStatus[] | nu
 }
 
 /**
- * Mock orchestrator run. Drives each agent through active -> completed with a
+ * Mock DEVFORGE run. Drives each agent through active -> completed with a
  * short delay. Swap the body for polling `getAgentStatus` (or a websocket)
  * once the local backend exists — the callback contract stays the same.
  */

@@ -128,7 +128,7 @@ export function ChatProvider({ children }: { children: ReactNode }) {
           updatedAt: summary.timestamp,
         }));
       } catch {
-        setError("Unable to connect to the Orchestrator backend.");
+        setError("Unable to connect to the DEVFORGE backend.");
         patchChat(chatId, (chat) => ({
           ...chat,
           agentWorkflow: (chat.agentWorkflow ?? createInitialWorkflow()).map((agent) =>

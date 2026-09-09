@@ -4,10 +4,10 @@
  */
 
 export const STORAGE_KEYS = {
-  chats: "orchestrator.chats",
-  folders: "orchestrator.folders",
-  theme: "orchestrator.theme",
-  sidebarCollapsed: "orchestrator.sidebar-collapsed",
+  chats: "devforge.chats",
+  folders: "devforge.folders",
+  theme: "devforge.theme",
+  sidebarCollapsed: "devforge.sidebar-collapsed",
 } as const;
 
 export const isBrowser = (): boolean => typeof window !== "undefined";

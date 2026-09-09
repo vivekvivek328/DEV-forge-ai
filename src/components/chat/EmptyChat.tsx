@@ -8,7 +8,7 @@ export function EmptyChat() {
       </span>
       <p className="mt-4 text-sm font-medium">This conversation is empty.</p>
       <p className="mt-1 text-[13px] text-muted-foreground">
-        Describe what you want to build and the Orchestrator will start the agent workflow.
+        Describe what you want to build and DEVFORGE AI will start the agent workflow.
       </p>
     </div>
   );

@@ -5,7 +5,7 @@ import { formatClockTime } from "../../utils/formatters";
 
 export function AssistantMessage({ message }: { message: Message }) {
   return (
-    <article className="animate-msg-in flex gap-3" aria-label="Orchestrator AI message">
+    <article className="animate-msg-in flex gap-3" aria-label="DEVFORGE AI message">
       <span className="grid size-9 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-brand to-violet text-brand-foreground">
         <Hexagon className="size-4" aria-hidden />
       </span>

@@ -32,7 +32,7 @@ export function ChatArea({ chat }: { chat: Chat }) {
           >
             <p className="font-medium text-danger">{error}</p>
             <p className="mt-1 text-[13px] text-muted-foreground">
-              Check that your local Orchestrator service is running, then try again.
+              Check that your local DEVFORGE service is running, then try again.
             </p>
             <div className="mt-3 flex gap-2">
               <Button
@@ -57,7 +57,7 @@ export function ChatArea({ chat }: { chat: Chat }) {
         <div className="mx-auto max-w-3xl">
           <PromptBox onSubmit={(prompt) => void submitPrompt(chat.id, prompt)} isSubmitting={isSubmitting} autoFocus />
           <p className="mt-2 text-center font-mono text-[10px] text-subtle-foreground">
-            Orchestrator AI can make mistakes. Review generated output before use.
+            DEVFORGE AI can make mistakes. Review generated output before use.
           </p>
         </div>
       </div>

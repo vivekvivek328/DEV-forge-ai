@@ -2,9 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 
 import { Home } from "../pages/Home";
 
-const title = "Orchestrator AI — Coordinated AI agents for software builds";
+const title = "DEVFORGE AI — Coordinated AI agents for software builds";
 const description =
-  "Describe what you want to build and the Orchestrator plans, researches, codes, implements and reviews it with specialist AI agents.";
+  "Describe what you want to build and DEVFORGE AI plans, researches, codes, implements and reviews it with specialist AI agents.";
 
 export const Route = createFileRoute("/")({
   head: () => ({

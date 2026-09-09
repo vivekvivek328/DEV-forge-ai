@@ -10,12 +10,12 @@ export function AgentStatus({ workflow }: { workflow: AgentStatusType[] }) {
 
   return (
     <section
-      aria-label="Orchestrator agent workflow"
+      aria-label="DEVFORGE AI agent workflow"
       className="animate-msg-in relative rounded-2xl border border-hairline bg-surface p-5 shadow-xl shadow-black/10 backdrop-blur-xl"
     >
       <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
         <div>
-          <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-subtle-foreground">Orchestrator AI</p>
+          <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-subtle-foreground">DEVFORGE AI</p>
           <p className="text-base font-semibold tracking-tight">Managing workflow</p>
         </div>
         <div className="flex items-center gap-2">
