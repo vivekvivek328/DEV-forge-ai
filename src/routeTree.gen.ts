@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as SplatRouteImport } from './routes/$'
+import { Route as AuthRouteImport } from './routes/auth'
 import { Route as ChatChatIdRouteImport } from './routes/chat.$chatId'
 
 const IndexRoute = IndexRouteImport.update({
@@ -23,6 +24,11 @@ const SplatRoute = SplatRouteImport.update({
   path: '/$',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ChatChatIdRoute = ChatChatIdRouteImport.update({
   id: '/chat/$chatId',
   path: '/chat/$chatId',
@@ -32,30 +38,34 @@ const ChatChatIdRoute = ChatChatIdRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
+  '/auth': typeof AuthRoute
   '/chat/$chatId': typeof ChatChatIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
+  '/auth': typeof AuthRoute
   '/chat/$chatId': typeof ChatChatIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
+  '/auth': typeof AuthRoute
   '/chat/$chatId': typeof ChatChatIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/$' | '/chat/$chatId'
+  fullPaths: '/' | '/$' | '/auth' | '/chat/$chatId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/$' | '/chat/$chatId'
-  id: '__root__' | '/' | '/$' | '/chat/$chatId'
+  to: '/' | '/$' | '/auth' | '/chat/$chatId'
+  id: '__root__' | '/' | '/$' | '/auth' | '/chat/$chatId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   SplatRoute: typeof SplatRoute
+  AuthRoute: typeof AuthRoute
   ChatChatIdRoute: typeof ChatChatIdRoute
 }
 
@@ -75,6 +85,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SplatRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/chat/$chatId': {
       id: '/chat/$chatId'
       path: '/chat/$chatId'
@@ -88,6 +105,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   SplatRoute: SplatRoute,
+  AuthRoute: AuthRoute,
   ChatChatIdRoute: ChatChatIdRoute,
 }
 export const routeTree = rootRouteImport
