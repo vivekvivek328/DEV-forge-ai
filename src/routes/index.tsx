@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import { Home } from "../pages/Home";
+import { Landing } from "../pages/Landing";
 
 const title = "DEVFORGE AI — Coordinated AI agents for software builds";
 const description =
@@ -15,5 +15,5 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: description },
     ],
   }),
-  component: Home,
+  component: Landing,
 });

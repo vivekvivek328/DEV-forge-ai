@@ -23,7 +23,7 @@ export function Chat({ chatId }: { chatId: string }) {
             This chat may have been deleted from this browser.
           </p>
           <Link
-            to="/"
+            to="/workspace"
             className="mt-4 inline-flex items-center rounded-xl bg-gradient-to-r from-brand to-violet px-4 py-2 text-sm font-semibold text-brand-foreground"
           >
             Start a new chat

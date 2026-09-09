@@ -1,11 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import { Chat } from "../pages/Chat";
+import { Chat } from "../../pages/Chat";
 
 const title = "Conversation — DEVFORGE AI";
 const description = "Follow the Planning, Research, Coding, Implementation and Review agents working on your build.";
 
-export const Route = createFileRoute("/chat/$chatId")({
+export const Route = createFileRoute("/_authenticated/chat/$chatId")({
   head: () => ({
     meta: [
       { title },
