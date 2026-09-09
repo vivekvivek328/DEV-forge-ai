@@ -1,9 +1,10 @@
 import { useEffect, useState, type FormEvent } from "react";
 import { useNavigate } from "@tanstack/react-router";
-import { Hexagon, Loader2 } from "lucide-react";
+import { Loader2 } from "lucide-react";
 
 import { supabase } from "@/integrations/supabase/client";
 import { lovable } from "@/integrations/lovable/index";
+import { BrandLogo } from "../components/common/BrandLogo";
 import { useAuth } from "../hooks/useAuth";
 
 type Mode = "signin" | "signup";
@@ -76,9 +77,7 @@ export function Auth() {
 
       <div className="relative z-10 w-full max-w-md rounded-2xl border border-hairline bg-panel p-7 backdrop-blur-xl">
         <div className="flex items-center gap-2.5">
-          <span className="grid size-9 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-brand to-violet text-brand-foreground shadow-lg shadow-brand/30">
-            <Hexagon className="size-4" aria-hidden />
-          </span>
+          <BrandLogo className="size-10 shrink-0 drop-shadow-[0_8px_16px_var(--brand)]" />
           <div className="leading-tight">
             <p className="text-[15px] font-bold tracking-tight">DEVFORGE AI</p>
             <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-subtle-foreground">

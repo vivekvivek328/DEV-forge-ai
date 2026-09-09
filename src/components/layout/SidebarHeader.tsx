@@ -1,5 +1,6 @@
-import { Hexagon, PanelLeftClose, PanelLeftOpen, Plus } from "lucide-react";
+import { PanelLeftClose, PanelLeftOpen, Plus } from "lucide-react";
 
+import { BrandLogo } from "../common/BrandLogo";
 import { Tooltip } from "../common/Tooltip";
 
 interface SidebarHeaderProps {
@@ -12,9 +13,7 @@ export function SidebarHeader({ collapsed, onToggleCollapsed, onNewChat }: Sideb
   return (
     <div className="flex flex-col gap-4">
       <div className={`flex items-center gap-2.5 pt-1 ${collapsed ? "justify-center" : "px-1.5"}`}>
-        <span className="grid size-9 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-brand to-violet text-brand-foreground shadow-lg shadow-brand/30">
-          <Hexagon className="size-4" aria-hidden />
-        </span>
+        <BrandLogo className="size-10 shrink-0 drop-shadow-[0_8px_16px_var(--brand)]" />
         {!collapsed ? (
           <div className="min-w-0 leading-tight">
             <p className="truncate text-[15px] font-bold tracking-tight">DEVFORGE AI</p>
