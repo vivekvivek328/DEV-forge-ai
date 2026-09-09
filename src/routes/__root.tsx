@@ -11,7 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-import { AppLayout } from "../components/layout/AppLayout";
+import { supabase } from "@/integrations/supabase/client";
 import { ChatProvider } from "../context/ChatContext";
 import { SidebarProvider } from "../context/SidebarContext";
 
