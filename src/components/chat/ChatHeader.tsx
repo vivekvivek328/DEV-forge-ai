@@ -1,7 +1,8 @@
-import { Hexagon, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 
 import { useSidebar } from "../../context/SidebarContext";
 import { Badge } from "../common/Badge";
+import { BrandLogo } from "../common/BrandLogo";
 
 interface ChatHeaderProps {
   title: string;
@@ -22,9 +23,7 @@ export function ChatHeader({ title, isRunning }: ChatHeaderProps) {
         <Menu className="size-4" aria-hidden />
       </button>
       <div className="flex min-w-0 items-center gap-2 text-sm">
-        <span className="grid size-7 shrink-0 place-items-center rounded-lg bg-surface-strong">
-          <Hexagon className="size-3.5" aria-hidden />
-        </span>
+        <BrandLogo className="size-7 shrink-0" />
         <h1 className="truncate font-medium">{title}</h1>
       </div>
       {isRunning ? (

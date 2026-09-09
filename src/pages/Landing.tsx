@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Link, useNavigate } from "@tanstack/react-router";
-import { Hexagon } from "lucide-react";
 
+import { BrandLogo } from "../components/common/BrandLogo";
 import { useAuth } from "../hooks/useAuth";
 
 const AGENTS = ["Planning", "Research", "Coding", "Implementation", "Review"];
@@ -20,9 +20,7 @@ export function Landing() {
       <div className="pointer-events-none absolute right-0 top-1/3 size-[340px] rounded-full bg-brand/25 blur-[120px]" />
 
       <main className="relative z-10 w-full max-w-2xl text-center">
-        <span className="mx-auto grid size-12 place-items-center rounded-2xl bg-gradient-to-br from-brand to-violet text-brand-foreground shadow-lg shadow-brand/30">
-          <Hexagon className="size-5" aria-hidden />
-        </span>
+        <BrandLogo className="mx-auto size-24 drop-shadow-[0_16px_28px_var(--brand)] md:size-28" priority />
         <h1 className="mt-6 text-4xl font-bold tracking-tight md:text-5xl">DEVFORGE AI</h1>
         <p className="mx-auto mt-4 max-w-xl text-sm text-muted-foreground md:text-base">
           Describe what you want to build. DEVFORGE AI plans, researches, codes, implements and reviews it with a team
