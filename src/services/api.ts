@@ -1,6 +1,6 @@
 /**
  * Thin HTTP layer. Every service call goes through here so the app can be
- * pointed at a local Orchestrator backend by setting VITE_API_BASE_URL.
+ * pointed at a local DEVFORGE backend by setting VITE_API_BASE_URL.
  */
 
 export const API_BASE_URL: string = import.meta.env["VITE_API_BASE_URL"] ?? "";
@@ -19,7 +19,7 @@ export class ApiError extends Error {
 
 export async function apiRequest<T>(path: string, init: RequestInit = {}): Promise<T> {
   if (!isBackendConfigured()) {
-    throw new ApiError("Unable to connect to the Orchestrator backend.", 0);
+    throw new ApiError("Unable to connect to the DEVFORGE backend.", 0);
   }
 
   const response = await fetch(`${API_BASE_URL.replace(/\/$/, "")}${path}`, {

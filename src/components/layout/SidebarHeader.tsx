@@ -17,7 +17,7 @@ export function SidebarHeader({ collapsed, onToggleCollapsed, onNewChat }: Sideb
         </span>
         {!collapsed ? (
           <div className="min-w-0 leading-tight">
-            <p className="truncate text-[15px] font-bold tracking-tight">Orchestrator AI</p>
+            <p className="truncate text-[15px] font-bold tracking-tight">DEVFORGE AI</p>
             <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-subtle-foreground">local · v0.4</p>
           </div>
         ) : null}

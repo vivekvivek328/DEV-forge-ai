@@ -5,8 +5,8 @@ import { NotFound } from "../pages/NotFound";
 export const Route = createFileRoute("/$")({
   head: () => ({
     meta: [
-      { title: "Page not found — Orchestrator AI" },
-      { name: "description", content: "This page is not part of the Orchestrator AI workspace." },
+      { title: "Page not found — DEVFORGE AI" },
+      { name: "description", content: "This page is not part of the DEVFORGE AI workspace." },
       { name: "robots", content: "noindex" },
     ],
   }),

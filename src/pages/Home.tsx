@@ -32,19 +32,19 @@ export function Home() {
       <div className="flex min-h-0 flex-1 items-center justify-center overflow-y-auto px-4 py-8 md:px-8">
         <div className="w-full max-w-2xl">
           <div className="text-center">
-            <h1 className="text-3xl font-bold tracking-tight md:text-4xl">Orchestrator AI</h1>
+            <h1 className="text-3xl font-bold tracking-tight md:text-4xl">DEVFORGE AI</h1>
             <p className="mt-3 text-sm text-muted-foreground md:text-base">
               Build software faster with coordinated AI agents.
             </p>
             <p className="mx-auto mt-2 max-w-lg text-[13px] text-subtle-foreground">
-              Describe what you want to build and the Orchestrator will plan, research, code, implement, and review it.
+              Describe what you want to build and DEVFORGE AI will plan, research, code, implement, and review it.
             </p>
           </div>
 
           <div className="mt-8">
             <PromptBox onSubmit={handleSubmit} isSubmitting={isSubmitting} size="large" autoFocus />
             <p className="mt-2 text-center font-mono text-[10px] text-subtle-foreground">
-              Orchestrator AI can make mistakes. Review generated output before use.
+              DEVFORGE AI can make mistakes. Review generated output before use.
             </p>
           </div>
         </div>

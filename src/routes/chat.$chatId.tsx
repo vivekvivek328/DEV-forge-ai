@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 
 import { Chat } from "../pages/Chat";
 
-const title = "Conversation — Orchestrator AI";
+const title = "Conversation — DEVFORGE AI";
 const description = "Follow the Planning, Research, Coding, Implementation and Review agents working on your build.";
 
 export const Route = createFileRoute("/chat/$chatId")({
