@@ -87,7 +87,7 @@ export function Sidebar({ variant = "desktop", onNavigate }: SidebarProps) {
                   onRename={renameChat}
                   onDelete={(chatId) => {
                     deleteChat(chatId);
-                    if (chatId === activeChatId) void navigate({ to: "/" });
+                    if (chatId === activeChatId) void navigate({ to: "/workspace" });
                   }}
                   onMove={moveChatToFolder}
                 />
