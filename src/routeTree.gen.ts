@@ -11,7 +11,9 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as SplatRouteImport } from './routes/$'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as AuthRouteImport } from './routes/auth'
+import { Route as AuthenticatedWorkspaceRouteImport } from './routes/_authenticated/workspace'
 import { Route as ChatChatIdRouteImport } from './routes/chat.$chatId'
 
 const IndexRoute = IndexRouteImport.update({
@@ -24,10 +26,19 @@ const SplatRoute = SplatRouteImport.update({
   path: '/$',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AuthRoute = AuthRouteImport.update({
   id: '/auth',
   path: '/auth',
   getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedWorkspaceRoute = AuthenticatedWorkspaceRouteImport.update({
+  id: '/workspace',
+  path: '/workspace',
+  getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
 const ChatChatIdRoute = ChatChatIdRouteImport.update({
   id: '/chat/$chatId',
@@ -39,31 +50,43 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
   '/auth': typeof AuthRoute
+  '/workspace': typeof AuthenticatedWorkspaceRoute
   '/chat/$chatId': typeof ChatChatIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
   '/auth': typeof AuthRoute
+  '/workspace': typeof AuthenticatedWorkspaceRoute
   '/chat/$chatId': typeof ChatChatIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/$': typeof SplatRoute
   '/auth': typeof AuthRoute
+  '/_authenticated/workspace': typeof AuthenticatedWorkspaceRoute
   '/chat/$chatId': typeof ChatChatIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/$' | '/auth' | '/chat/$chatId'
+  fullPaths: '/' | '/$' | '/auth' | '/workspace' | '/chat/$chatId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/$' | '/auth' | '/chat/$chatId'
-  id: '__root__' | '/' | '/$' | '/auth' | '/chat/$chatId'
+  to: '/' | '/$' | '/auth' | '/workspace' | '/chat/$chatId'
+  id:
+    | '__root__'
+    | '/'
+    | '/_authenticated'
+    | '/$'
+    | '/auth'
+    | '/_authenticated/workspace'
+    | '/chat/$chatId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   SplatRoute: typeof SplatRoute
   AuthRoute: typeof AuthRoute
   ChatChatIdRoute: typeof ChatChatIdRoute
@@ -85,12 +108,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SplatRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated': {
+      id: '/_authenticated'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthenticatedRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/auth': {
       id: '/auth'
       path: '/auth'
       fullPath: '/auth'
       preLoaderRoute: typeof AuthRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/_authenticated/workspace': {
+      id: '/_authenticated/workspace'
+      path: '/workspace'
+      fullPath: '/workspace'
+      preLoaderRoute: typeof AuthenticatedWorkspaceRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
     }
     '/chat/$chatId': {
       id: '/chat/$chatId'
@@ -102,8 +139,20 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface AuthenticatedRouteRouteChildren {
+  AuthenticatedWorkspaceRoute: typeof AuthenticatedWorkspaceRoute
+}
+
+const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedWorkspaceRoute: AuthenticatedWorkspaceRoute,
+}
+
+const AuthenticatedRouteRouteWithChildren =
+  AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   SplatRoute: SplatRoute,
   AuthRoute: AuthRoute,
   ChatChatIdRoute: ChatChatIdRoute,
